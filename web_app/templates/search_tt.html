@@ -1,0 +1,14 @@
+{% extends "search_box.html" %}
+
+{% block cont %}
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.text_name.label }}<br>
+        {{ form.text_name(class="form-control") }}<br>
+        {% for error in form.text_name.errors %}
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-outline-success") }}</p>
+</form>
+{% endblock %}
